@@ -2,11 +2,11 @@ import React from "react";
 
 const Info = ({ title, value }) => {
   return (
-    <div className="flex flex-col mx-3 my-2 w-full  items-center lg:items-start lg:w-1/4 lg:py-5 lg:pl-10">
-      <p className="text-xs lg:text-md font-semibold text-gray-500 uppercase tracking-widest">
+    <div className="flex flex-col  w-full  items-center lg:items-start lg:w-1/4 lg:py-5 lg:pl-10">
+      <p className="text-xs lg:text-md mb-1 font-semibold text-gray-500 uppercase tracking-widest">
         {title}
       </p>
-      <p className="text-md lg:text-2xl font-semibold tracking-widest lg:mt-1">
+      <p className="text-lg lg:text-2xl  mb-1 font-semibold tracking-widest lg:mt-1">
         {value}
       </p>
     </div>

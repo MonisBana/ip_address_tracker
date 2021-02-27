@@ -56,8 +56,12 @@ function App() {
         loading={loading}
         valid={valid}
       />
-      <Infos ip={ip} location={location} timezone={timezone} isp={isp} />
-      {lat !== null && lon !== null ? <Maps lat={lat} lon={lon} /> : null}
+      <div className="flex-1">
+        <div className="relative w-full h-full">
+          <Infos ip={ip} location={location} timezone={timezone} isp={isp} />
+          {lat !== null && lon !== null ? <Maps lat={lat} lon={lon} /> : null}
+        </div>
+      </div>
     </div>
   );
 }
