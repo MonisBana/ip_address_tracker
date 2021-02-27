@@ -12,6 +12,8 @@ function App() {
   const [isp, setISP] = useState(null);
   const [lat, setLat] = useState(null);
   const [lon, setLon] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [valid, setValid] = useState(true);
   async function fetchData() {
     const result = await fetch(
       inputIP
@@ -19,20 +21,29 @@ function App() {
         : `https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_API_KEY}`
     );
     const res = await result.json();
-    setIP(res.ip);
-    setLocation(res.location.city);
-    setTimezone("UTC " + res.location.timezone);
-    setISP(res.isp);
-    setLat(res.location.lat);
-    setLon(res.location.lng);
+    console.log(res.code);
+    if (res.code === 422) {
+      setValid(false);
+      setLoading(false);
+    } else {
+      setIP(res.ip);
+      setLocation(res.location.city);
+      setTimezone("UTC " + res.location.timezone);
+      setISP(res.isp);
+      setLat(res.location.lat);
+      setLon(res.location.lng);
+      setLoading(false);
+    }
   }
   useEffect(() => {
+    setLoading(true);
     fetchData();
   }, []);
   function IpHandler(e) {
     setInputIP(e.target.value);
   }
   function getInfo() {
+    setLoading(true);
     fetchData();
   }
   return (
@@ -42,6 +53,8 @@ function App() {
         inputIP={inputIP}
         IpHandler={IpHandler}
         getInfo={getInfo}
+        loading={loading}
+        valid={valid}
       />
       <Infos ip={ip} location={location} timezone={timezone} isp={isp} />
       {lat !== null && lon !== null ? <Maps lat={lat} lon={lon} /> : null}
