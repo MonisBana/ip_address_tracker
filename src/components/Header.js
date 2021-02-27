@@ -26,7 +26,7 @@ const Header = (props) => {
             onChange={(e) => props.IpHandler(e)}
           />
           <button
-            className="rounded-r-lg very-dark-gray lg:p-5 h-16 lg:pl-3  cursor-pointer w-2/12 lg:w-1/12 min-w-1"
+            className="rounded-r-lg very-dark-gray lg:p-5 h-16 lg:pl-3 cursor-pointer w-2/12 lg:w-1/12 min-w-1 focus:outline-none"
             onClick={props.getInfo}
           >
             {props.loading ? (
