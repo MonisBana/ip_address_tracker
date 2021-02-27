@@ -47,19 +47,21 @@ function App() {
     fetchData();
   }
   return (
-    <div>
-      <Header
-        className="h-1/3"
-        inputIP={inputIP}
-        IpHandler={IpHandler}
-        getInfo={getInfo}
-        loading={loading}
-        valid={valid}
-      />
-      <div className="flex-1">
-        <div className="relative w-full h-full">
-          <Infos ip={ip} location={location} timezone={timezone} isp={isp} />
-          {lat !== null && lon !== null ? <Maps lat={lat} lon={lon} /> : null}
+    <div className="flex items-center justify-center h-screen antialiased">
+      <div className="flex flex-col  w-full h-full">
+        <Header
+          className="h-1/3"
+          inputIP={inputIP}
+          IpHandler={IpHandler}
+          getInfo={getInfo}
+          loading={loading}
+          valid={valid}
+        />
+        <div className="flex-1">
+          <div className="relative w-full h-full">
+            <Infos ip={ip} location={location} timezone={timezone} isp={isp} />
+            {lat !== null && lon !== null ? <Maps lat={lat} lon={lon} /> : null}
+          </div>
         </div>
       </div>
     </div>

@@ -14,8 +14,8 @@ const Info = ({ title, value }) => {
 };
 const Infos = ({ ip, location, timezone, isp }) => {
   return (
-    <div className="absolute top-30 z-10 flex items-center justify-center w-full h-60 lg:h-48 -mt-16 lg:-mt-24 ">
-      <div className="flex flex-col lg:flex-row items-center p-2 w-10/12 lg:w-3/4 lg:divide-x bg-white rounded-lg shadow-xl h-full">
+    <div className="absolute top-0 z-10 flex items-center justify-center w-full h-60 lg:h-48 -mt-12 lg:-mt-24 ">
+      <div className="flex flex-col lg:flex-row items-center  p-2 w-10/12 lg:w-3/4 lg:divide-x bg-white rounded-lg shadow-xl h-full">
         <Info title="Ip Address" value={ip} />
         <Info title="Location" value={location} />
         <Info title="Timezone" value={timezone} />

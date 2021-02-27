@@ -9,16 +9,18 @@ const antIcon = (
 
 const Header = (props) => {
   return (
-    <div className="bg-pattern bg-no-repeat bg-cover h-screen/3 pt-2 ">
-      <div className="flex flex-col items-center justify-center">
+    <div className="">
+      <div className="bg-pattern bg-no-repeat bg-cover h-64  sm:h-1/3 lg:h-screen/3 relative flex items-center  w-full flex-col">
         <h1 className="text-3xl text-white mb-4 mt-6 font-semibold">
           IP Address Tracker
         </h1>
         <div className="flex flex-row w-10/12 lg:w-5/12 items-center justify-center ">
           <input
             placeholder="Search for any IP address or domain"
-            className={`rounded-l-lg p-4 text-md lg:text-xl w-full font-bold focus:outline-none ${
-              props.valid ? "" : `border-2 border-red-500 text-red-500`
+            className={`rounded-l-lg p-4 text-xl lg:text-xl w-full font-bold focus:outline-none ${
+              props.valid
+                ? "focus:shadow-outline"
+                : `border-2 border-red-500 text-red-500`
             } `}
             value={props.inputIP}
             onChange={(e) => props.IpHandler(e)}
