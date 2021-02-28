@@ -2,7 +2,7 @@ import React from "react";
 
 const Info = ({ title, value }) => {
   return (
-    <div className="flex flex-col  w-full  items-center lg:items-start lg:w-1/4 lg:py-5 lg:pl-10">
+    <div className="flex flex-col  w-full  items-center lg:items-start lg:w-1/4 lg:py-5 lg:px-5">
       <p className="text-xs lg:text-md mb-1 font-semibold text-gray-500 uppercase tracking-widest">
         {title}
       </p>
